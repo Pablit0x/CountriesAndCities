@@ -19,5 +19,10 @@ data class CountryDto(
 )
 
 fun CountryDto.toCountry(): Country {
-    return Country(name = translations.pol.official)
+    return Country(
+        name = translations.pol.official,
+        currency = currencies.AUD,
+        languages = languages.eng,
+        flag = flags.png
+    )
 }

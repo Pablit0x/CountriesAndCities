@@ -1,7 +1,9 @@
 package data.remote.country
 
 import data.model.country.CountryDto
+import data.model.country.toCountry
 import data.utils.Constants
+import domain.model.Country
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -21,7 +23,9 @@ class CountryApi {
         }
     }
 
-    suspend fun getAllCountries(): List<CountryDto> {
-        return httpClient.get(Constants.BASE_URL).body<List<CountryDto>>()
+    suspend fun getAllCountries(): List<Country> {
+        return httpClient.get(Constants.BASE_URL).body<List<CountryDto>>().map{ countryDto ->
+            countryDto.toCountry()
+        }
     }
 }
