@@ -18,6 +18,7 @@ junit = "4.13.2"
 ktor = "2.3.6"
 moko-mvvm = "0.16.1"
 kotlinx-coroutines = "1.7.3"
+kamel = "0.8.3"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -43,6 +44,7 @@ ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negoti
 moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mvvm" }
 moko-mvvm-compose = { module = "dev.icerock.moko:mvvm-compose", version.ref = "moko-mvvm" }
 kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+kamel = { module = "media.kamel:kamel-image", version.ref = "kamel" }
 
 
 [plugins]

@@ -1,3 +1,8 @@
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
@@ -7,12 +12,14 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import data.remote.country.CountryApi
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 import org.jetbrains.compose.resources.ExperimentalResourceApi
+import presentation.composables.CountryListItem
+import presentation.countries.CountriesViewModel
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
 
@@ -29,9 +36,16 @@ fun App() {
             countriesViewModel.updateCountries()
         }
 
-        Text(
-            text = "Countries = ${state.countries}",
-            modifier = Modifier.verticalScroll(rememberScrollState())
-        )
+        LazyColumn(
+            modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            items(state.countries) { country ->
+                CountryListItem(
+                    countryName = country.name,
+                    flagImage = country.flag,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+        }
     }
 }
