@@ -18,6 +18,6 @@ data class CountryDto(
     val translations: Translations,
 )
 
-fun CountryDto.toCountry() : Country {
+fun CountryDto.toCountry(): Country {
     return Country(name = translations.pol.official)
 }
