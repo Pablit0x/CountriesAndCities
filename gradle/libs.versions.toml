@@ -19,6 +19,8 @@ ktor = "2.3.6"
 moko-mvvm = "0.16.1"
 kotlinx-coroutines = "1.7.3"
 kamel = "0.8.3"
+extComposeJetbrains = "2.1.4-compose-experimental"
+decompose = "2.2.0-alpha03"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -45,6 +47,8 @@ moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mv
 moko-mvvm-compose = { module = "dev.icerock.moko:mvvm-compose", version.ref = "moko-mvvm" }
 kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 kamel = { module = "media.kamel:kamel-image", version.ref = "kamel" }
+decompose-jetbrains = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "extComposeJetbrains" }
+decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
 
 
 [plugins]
