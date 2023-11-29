@@ -63,6 +63,38 @@
 			path = iosApp.xcodeproj/xcuserdata;
 			sourceTree = "<group>";
 		};
+		6423841178E5DEB698A3AB2D /* swiftpm */ = {
+			isa = PBXGroup;
+			children = (
+				6423845BD9E04D61B975693B /* configuration */,
+			);
+			path = swiftpm;
+			sourceTree = "<group>";
+		};
+		6423845BD9E04D61B975693B /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
+		6423848D91CB33463B001DFB /* project.xcworkspace */ = {
+			isa = PBXGroup;
+			children = (
+				64238A13FC4520B64C3BCB98 /* xcshareddata */,
+			);
+			name = project.xcworkspace;
+			path = iosApp.xcodeproj/project.xcworkspace;
+			sourceTree = "<group>";
+		};
+		64238A13FC4520B64C3BCB98 /* xcshareddata */ = {
+			isa = PBXGroup;
+			children = (
+				6423841178E5DEB698A3AB2D /* swiftpm */,
+			);
+			path = xcshareddata;
+			sourceTree = "<group>";
+		};
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +103,7 @@
 				7555FF7C242A565900829871 /* Products */,
 				42799AB246E5F90AF97AA0EF /* Frameworks */,
 				64238302153285C1AC43B61A /* xcuserdata */,
+				6423848D91CB33463B001DFB /* project.xcworkspace */,
 			);
 			sourceTree = "<group>";
 		};
