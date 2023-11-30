@@ -38,7 +38,6 @@ kotlin {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)
-            implementation(libs.decompose)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -63,8 +62,6 @@ kotlin {
             implementation(libs.moko.mvvm.core)
             implementation(libs.moko.mvvm.compose)
             implementation(libs.kamel)
-            implementation(libs.decompose)
-            implementation(libs.decompose.jetbrains)
         }
     }
 }

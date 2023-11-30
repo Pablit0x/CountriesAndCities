@@ -19,8 +19,6 @@ ktor = "2.3.6"
 moko-mvvm = "0.16.1"
 kotlinx-coroutines = "1.7.3"
 kamel = "0.8.3"
-extComposeJetbrains = "2.1.4-compose-experimental"
-decompose = "2.2.0-alpha03"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
