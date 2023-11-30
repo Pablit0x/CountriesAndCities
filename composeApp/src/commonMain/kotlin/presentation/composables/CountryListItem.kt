@@ -1,9 +1,11 @@
 package presentation.composables
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -20,11 +22,7 @@ fun CountryListItem(
     countryName: String, flagImage: String, modifier: Modifier = Modifier
 ) {
     Row(
-        modifier = modifier.border(
-            width = 1.dp,
-            color = MaterialTheme.colorScheme.primary,
-            shape = RoundedCornerShape(40)
-        ),
+        modifier = modifier.background(color = MaterialTheme.colorScheme.primary),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
@@ -32,9 +30,10 @@ fun CountryListItem(
             resource = asyncPainterResource(flagImage),
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            modifier = Modifier.fillMaxWidth(0.3f)
+            modifier = Modifier.size(width = 100.dp, height = 60.dp)
         )
 
-        Text(text = countryName)
+        Text(text = countryName, color = MaterialTheme.colorScheme.onPrimary)
+
     }
 }
