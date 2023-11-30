@@ -11,6 +11,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import data.remote.country.CountryApi
+import data.repository.CountryRepositoryImpl
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 import presentation.composables.CountryListItem
@@ -24,8 +25,9 @@ fun App() {
     }
 
     MaterialTheme {
-        val countriesViewModel =
-            getViewModel(Unit, viewModelFactory { CountriesViewModel(countryApi = countryApi) })
+        val countryRepository = CountryRepositoryImpl(countryApi = CountryApi())
+        val countriesViewModel = getViewModel(Unit,
+            viewModelFactory { CountriesViewModel(countryRepository = countryRepository) })
         val state by countriesViewModel.state.collectAsState()
 
         LaunchedEffect(countriesViewModel) {
