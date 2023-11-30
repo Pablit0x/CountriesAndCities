@@ -20,7 +20,7 @@ data class CountryDto(
 
 fun CountryDto.toCountry(): Country {
     return Country(
-        name = translations.pol.official,
+        name = translations.pol.common,
         flag = flags.png
     )
 }

@@ -25,7 +25,7 @@ class CountryApi {
 
     suspend fun getAllCountries(): List<Country> {
         return httpClient.get(Constants.BASE_URL).body<List<CountryDto>>().sortedBy {
-            it.translations.pol.official
+            it.translations.pol.common
         }.map { countryDto ->
             countryDto.toCountry()
         }
