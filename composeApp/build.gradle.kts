@@ -59,13 +59,18 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
+
             implementation(libs.moko.mvvm.core)
             implementation(libs.moko.mvvm.compose)
             implementation(libs.kamel)
+
             implementation(libs.voyager.navigator)
             implementation(libs.voyager.tab)
             implementation(libs.voyager.transitions)
             implementation(libs.voyager.koin)
+            
+            implementation(libs.kstore.core)
+            implementation(libs.kstore.file)
         }
     }
 }

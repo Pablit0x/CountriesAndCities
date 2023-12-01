@@ -18,13 +18,15 @@ import data.remote.country.CountryApi
 import data.repository.CountryRepositoryImpl
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
+import domain.shared.getCountryCachePath
+import getPlatform
 import presentation.composables.CountryListItem
 
 class ScreenCountries : Screen {
 
     @Composable
     override fun Content() {
-        val countryRepository = CountryRepositoryImpl(countryApi = CountryApi())
+        val countryRepository = CountryRepositoryImpl(countryApi = CountryApi(), getCountryCachePath())
         val countriesViewModel = getViewModel(Unit,
             viewModelFactory { CountriesViewModel(countryRepository = countryRepository) })
         val state by countriesViewModel.state.collectAsState()

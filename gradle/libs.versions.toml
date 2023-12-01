@@ -20,6 +20,7 @@ moko-mvvm = "0.16.1"
 kotlinx-coroutines = "1.7.3"
 kamel = "0.8.3"
 voyager = "1.0.0-rc10"
+kstore = "0.6.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -50,6 +51,8 @@ voyager-navigator = { group = "cafe.adriel.voyager", name = "voyager-navigator",
 voyager-transitions = { group = "cafe.adriel.voyager", name = "voyager-transitions", version.ref = "voyager" }
 voyager-tab = { group = "cafe.adriel.voyager", name = "voyager-tab-navigator", version.ref = "voyager" }
 voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager" }
+kstore-core = { group = "io.github.xxfast", name = "kstore", version.ref = "kstore" }
+kstore-file = { group = "io.github.xxfast", name = "kstore-file", version.ref = "kstore" }
 
 
 [plugins]
