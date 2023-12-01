@@ -12,37 +12,18 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import cafe.adriel.voyager.navigator.Navigator
 import data.remote.country.CountryApi
 import data.repository.CountryRepositoryImpl
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 import presentation.composables.CountryListItem
 import presentation.screens.countries.CountriesViewModel
+import presentation.screens.menu.ScreenMenu
 
 @Composable
 fun App() {
     MaterialTheme {
-        val countryRepository = CountryRepositoryImpl(countryApi = CountryApi())
-        val countriesViewModel = getViewModel(Unit,
-            viewModelFactory { CountriesViewModel(countryRepository = countryRepository) })
-        val state by countriesViewModel.state.collectAsState()
-
-        LaunchedEffect(countriesViewModel) {
-            countriesViewModel.updateCountries()
-        }
-
-        AnimatedVisibility(state.countries.isNotEmpty(), enter = fadeIn()) {
-            LazyColumn(
-                modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(4.dp)
-            ) {
-                items(state.countries) { country ->
-                    CountryListItem(
-                        countryName = country.name,
-                        flagImage = country.flag,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                }
-            }
-        }
+        Navigator(screen = ScreenMenu())
     }
 }
