@@ -13,6 +13,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.transitions.SlideTransition
 import data.remote.country.CountryApi
 import data.repository.CountryRepositoryImpl
 import dev.icerock.moko.mvvm.compose.getViewModel
@@ -24,6 +25,8 @@ import presentation.screens.menu.ScreenMenu
 @Composable
 fun App() {
     MaterialTheme {
-        Navigator(screen = ScreenMenu())
+        Navigator(screen = ScreenMenu()) { navigator ->
+            SlideTransition(navigator = navigator)
+        }
     }
 }
