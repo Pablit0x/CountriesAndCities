@@ -19,6 +19,7 @@ ktor = "2.3.6"
 moko-mvvm = "0.16.1"
 kotlinx-coroutines = "1.7.3"
 kamel = "0.8.3"
+voyager = "1.0.0-rc10"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -45,6 +46,10 @@ moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "moko-mv
 moko-mvvm-compose = { module = "dev.icerock.moko:mvvm-compose", version.ref = "moko-mvvm" }
 kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 kamel = { module = "media.kamel:kamel-image", version.ref = "kamel" }
+voyager-navigator = { group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref = "voyager" }
+voyager-transitions = { group = "cafe.adriel.voyager", name = "voyager-transitions", version.ref = "voyager" }
+voyager-tab = { group = "cafe.adriel.voyager", name = "voyager-tab-navigator", version.ref = "voyager" }
+voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager" }
 
 
 [plugins]

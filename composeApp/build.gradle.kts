@@ -62,6 +62,10 @@ kotlin {
             implementation(libs.moko.mvvm.core)
             implementation(libs.moko.mvvm.compose)
             implementation(libs.kamel)
+            implementation(libs.voyager.navigator)
+            implementation(libs.voyager.tab)
+            implementation(libs.voyager.transitions)
+            implementation(libs.voyager.koin)
         }
     }
 }

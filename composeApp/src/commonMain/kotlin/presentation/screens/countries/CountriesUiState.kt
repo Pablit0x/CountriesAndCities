@@ -1,4 +1,4 @@
-package presentation.countries
+package presentation.screens.countries
 
 import domain.model.Country
 

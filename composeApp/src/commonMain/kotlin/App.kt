@@ -17,7 +17,7 @@ import data.repository.CountryRepositoryImpl
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
 import presentation.composables.CountryListItem
-import presentation.countries.CountriesViewModel
+import presentation.screens.countries.CountriesViewModel
 
 @Composable
 fun App() {

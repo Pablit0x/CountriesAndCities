@@ -1,4 +1,4 @@
-package presentation.countries
+package presentation.screens.countries
 
 import data.remote.country.CountryApi
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
