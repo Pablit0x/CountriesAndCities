@@ -38,6 +38,7 @@ kotlin {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)
+            implementation(libs.koin.android)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -71,6 +72,9 @@ kotlin {
             
             implementation(libs.kstore.core)
             implementation(libs.kstore.file)
+
+            implementation(libs.koin.compose)
+            implementation(libs.koin.core)
         }
     }
 }

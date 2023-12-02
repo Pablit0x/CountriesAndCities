@@ -18,17 +18,18 @@ import data.remote.country.CountryApi
 import data.repository.CountryRepositoryImpl
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
+import domain.repository.CountryRepository
 import domain.shared.getCountryCachePath
 import getPlatform
+import org.koin.compose.koinInject
 import presentation.composables.CountryListItem
 
 class ScreenCountries : Screen {
 
     @Composable
     override fun Content() {
-        val countryRepository = CountryRepositoryImpl(countryApi = CountryApi(), getCountryCachePath())
-        val countriesViewModel = getViewModel(Unit,
-            viewModelFactory { CountriesViewModel(countryRepository = countryRepository) })
+        val countryRepository = koinInject<CountryRepository>()
+        val countriesViewModel = getViewModel(Unit, viewModelFactory { CountriesViewModel(countryRepository = countryRepository) })
         val state by countriesViewModel.state.collectAsState()
 
         LaunchedEffect(countriesViewModel) {
