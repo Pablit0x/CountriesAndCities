@@ -4,5 +4,5 @@ import domain.model.Country
 
 data class CountriesUiState(
     val countries: List<Country>,
-    val errorMsg : String? = null
+    val errorMsg: String? = null
 )

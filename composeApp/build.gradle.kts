@@ -69,7 +69,7 @@ kotlin {
             implementation(libs.voyager.tab)
             implementation(libs.voyager.transitions)
             implementation(libs.voyager.koin)
-            
+
             implementation(libs.kstore.core)
             implementation(libs.kstore.file)
 

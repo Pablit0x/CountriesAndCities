@@ -1,6 +1,5 @@
 package presentation.screens.countries
 
-import data.remote.country.CountryApi
 import data.utils.Response
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import domain.repository.CountryRepository
@@ -18,7 +17,7 @@ class CountriesViewModel(private val countryRepository: CountryRepository) : Vie
         viewModelScope.launch {
             val countries = countryRepository.getAllCountries()
 
-            when(countries){
+            when (countries) {
                 is Response.Success -> {
                     _state.update {
                         it.copy(
@@ -27,6 +26,7 @@ class CountriesViewModel(private val countryRepository: CountryRepository) : Vie
                         )
                     }
                 }
+
                 is Response.Error -> {
                     _state.update {
                         it.copy(

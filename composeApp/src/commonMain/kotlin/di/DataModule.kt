@@ -9,5 +9,5 @@ import org.koin.dsl.module
 val dataModule = module {
     single { CountryApi() }
     single { getCountryCachePath() }
-    single <CountryRepository> { CountryRepositoryImpl(get(), get()) }
+    single<CountryRepository> { CountryRepositoryImpl(get(), get()) }
 }
