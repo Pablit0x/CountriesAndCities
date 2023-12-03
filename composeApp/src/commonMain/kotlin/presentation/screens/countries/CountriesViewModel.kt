@@ -1,6 +1,7 @@
 package presentation.screens.countries
 
 import data.remote.country.CountryApi
+import data.utils.Response
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
 import domain.repository.CountryRepository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,10 +17,24 @@ class CountriesViewModel(private val countryRepository: CountryRepository) : Vie
     fun updateCountries() {
         viewModelScope.launch {
             val countries = countryRepository.getAllCountries()
-            _state.update {
-                it.copy(
-                    countries = countries
-                )
+
+            when(countries){
+                is Response.Success -> {
+                    _state.update {
+                        it.copy(
+                            countries = countries.data,
+                            errorMsg = null
+                        )
+                    }
+                }
+                is Response.Error -> {
+                    _state.update {
+                        it.copy(
+                            countries = emptyList(),
+                            errorMsg = countries.message
+                        )
+                    }
+                }
             }
         }
     }
