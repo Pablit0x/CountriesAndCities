@@ -1,8 +1,9 @@
 package data.repository
 
-import data.remote.country.CountryApi
+import data.remote.country.CountryApiServiceImpl
 import data.utils.Response
 import domain.model.Country
+import domain.remote.CountryApiService
 import domain.repository.CountryRepository
 import domain.shared.CountryCachePath
 import io.github.xxfast.kstore.KStore
@@ -10,7 +11,8 @@ import io.github.xxfast.kstore.file.extensions.getOrEmpty
 import io.github.xxfast.kstore.file.storeOf
 
 class CountryRepositoryImpl(
-    private val countryApi: CountryApi, pathToCountryCache: CountryCachePath
+    private val countryApiServiceImpl: CountryApiService,
+    pathToCountryCache: CountryCachePath
 ) : CountryRepository {
 
     private val cache: KStore<List<Country>> = storeOf(filePath = pathToCountryCache.name)
@@ -22,7 +24,7 @@ class CountryRepositoryImpl(
             return Response.Success(cachedCountries)
         }
 
-        val apiResponse = countryApi.getAllCountries()
+        val apiResponse = countryApiServiceImpl.getAllCountries()
 
         if (apiResponse is Response.Success) {
             apiResponse.data.also { countries ->
